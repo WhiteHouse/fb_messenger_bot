@@ -1,0 +1,11 @@
+fb_api_url: 'https://graph.facebook.com/v2.6/'
+fb_verify_token: ''
+fb_page_access_token: ''
+logging:
+  log_incoming_post: '0'
+  log_http_response: '0'
+  log_outgoing_post: '0'
+queueing:
+  incoming:
+    timeout: 30
+trolling_threshold: 3

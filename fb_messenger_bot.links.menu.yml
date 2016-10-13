@@ -1,0 +1,5 @@
+fb_messenger_bot.admin_settings:
+  title: 'Facebook Messenger Bot Settings'
+  description: 'Administer settings for the Facebook Messenger Bot.'
+  route_name: fb_messenger_bot.admin_settings
+  parent: system.admin_config_services

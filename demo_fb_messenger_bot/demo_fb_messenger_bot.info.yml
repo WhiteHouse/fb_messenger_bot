@@ -1,0 +1,7 @@
+name: Demo Facebook Messenger Bot
+description: Custom demo bot built using fb_messenger_bot module
+package: Custom
+type: module
+core: 8.x
+dependencies:
+  - fb_messenger_bot

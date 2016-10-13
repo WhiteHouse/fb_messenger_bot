@@ -1,0 +1,14 @@
+fb_messenger_bot.contact:
+  path: '/webhook/contact'
+  defaults:
+    _controller: '\Drupal\fb_messenger_bot\Controller\ContactController::contact'
+    _title: 'Contact'
+  requirements:
+    _permission: 'access content'
+fb_messenger_bot.admin_settings:
+  path: '/admin/config/fb-messenger'
+  defaults:
+    _form: '\Drupal\fb_messenger_bot\Form\FacebookServiceSettingsForm'
+    _title: 'Facebook Service Settings'
+  requirements:
+    _permission: 'administer site configuration'

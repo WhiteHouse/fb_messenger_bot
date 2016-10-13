@@ -1,0 +1,6 @@
+name: Facebook Messenger Bot
+description: Create a Facebook Messenger Bot.
+package: Custom
+type: module
+core: 8.x
+configure: fb_messenger_bot.admin_settings

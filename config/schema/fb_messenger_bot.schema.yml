@@ -1,0 +1,40 @@
+fb_messenger_bot.settings:
+  type: config_object
+  label: 'Messenger Bot Settings'
+  mapping:
+    fb_api_url:
+      type: string
+      label: 'Facebook API URL'
+    fb_verify_token:
+      type: string
+      label: 'Facebook Verify Token'
+    fb_page_access_token:
+      type: string
+      label: 'Facebook Access Token'
+    logging:
+      type: mapping
+      label: 'Messenger bot Logging Settings'
+      mapping:
+        log_incoming_post:
+          type: string
+          label: 'Log incoming post'
+        log_http_response:
+          type: string
+          label: 'Log http response'
+        log_outgoing_post:
+          type: string
+          label: 'Log outgoing post'
+    queueing:
+      type: mapping
+      label: 'Messenger bot queue settings'
+      mapping:
+        incoming:
+          type: mapping
+          label: 'Queue incoming messages'
+          mapping:
+            timeout:
+              type: integer
+              label: 'Queue timeout'
+    trolling_threshold:
+      type: integer
+      label: 'trolling threshold'

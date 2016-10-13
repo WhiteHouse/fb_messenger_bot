@@ -1,0 +1,18 @@
+services:
+  fb_messenger_bot.fb_service:
+    class: Drupal\fb_messenger_bot\FacebookService
+    arguments: ['@config.factory', '@http_client', '@logger.channel.fb_messenger_bot', '@request_stack']
+  fb_messenger_bot.conversation_factory:
+    class: Drupal\fb_messenger_bot\Conversation\ConversationFactory
+    arguments: ['@entity.query']
+  fb_messenger_bot.workflow:
+    class: Drupal\fb_messenger_bot\Workflow\FBMessengerBotWorkflow
+    arguments: ['@config.factory', '@fb_messenger_bot.conversation_factory', '@string_translation', '@fb_messenger_bot.fb_service', '@logger.channel.fb_messenger_bot']
+  fb_messenger_bot.bot:
+    class: Drupal\fb_messenger_bot\Bot\FBBot
+    arguments: ['@fb_messenger_bot.fb_service', '@fb_messenger_bot.conversation_factory', '@fb_messenger_bot.workflow']
+
+  logger.channel.fb_messenger_bot:
+    class: Drupal\Core\Logger\LoggerChannel
+    factory: logger.factory:get
+    arguments: ['fb_messenger_bot']
