@@ -1,10 +1,11 @@
 # Features
 
-This module provides a tool to build a chat bot to work on Facebook's Messenger
+This Drupal module provides a tool to build a chat bot to work on Facebook's Messenger
 Platform.
 
 ## Requirements
 
+- Drupal 8
 - PHP 5.6 or greater
 - Facebook App and Page
 
@@ -14,7 +15,7 @@ Platform.
  2. Visit /admin/config/fb-messenger and enter a custom value for the Facebook
     Verify Token (save the configuration).
  3. Complete steps 1-4 outlined in [Facebook's quickstart documentation](https://developers.facebook.com/docs/messenger-platform/quickstart)
-    including the copying of the page access token in step 3.
+    including the copying of the page access token in step 3 (note: this module sets up the webhook at /webhook/contact).
  4. Return to /admin/config/fb-messenger and paste the page access token into
     the Facebook Page Access Token field (save the configuration).
  5. Clear caches.
