@@ -204,7 +204,7 @@ class BotWorkflowStepTest extends UnitTestCase {
 
     $outcome = $this->questionMessageStep->processResponse($incomingMessage);
 
-    $this->assertInstanceOf('\Drupal\fb_messenger_bot\Step\StepInvocationOutcome', $outcome, 'BotWorkflowStep::procesMessage() did not return a StepInvocationOutcomes.');
+    $this->assertInstanceOf('\Drupal\fb_messenger_bot\Step\StepInvocationOutcome', $outcome, 'BotWorkflowStep::processMessage() did not return a StepInvocationOutcomes.');
 
     $this->assertEquals($expectedValid, $outcome->incomingResponseIsValid());
     $this->assertEquals($expectedMessage, $outcome->getOutboundMessage()[0]->getFormattedMessage()['text']);
