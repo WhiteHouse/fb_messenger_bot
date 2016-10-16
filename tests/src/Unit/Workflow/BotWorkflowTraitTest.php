@@ -255,7 +255,7 @@ class BotWorkflowTraitTest extends UnitTestCase {
     // Make sure we have at least one trolling message.
     $this->assertTrue(count($trollingMessages) >= 1);
 
-    // Make sure all contents of the array are actually MessagInterfaces.
+    // Make sure all contents of the array are actually MessageInterfaces.
     foreach ($trollingMessages as $message) {
       $this->assertInstanceOf('\Drupal\fb_messenger_bot\Message\MessageInterface', $message);
     }
