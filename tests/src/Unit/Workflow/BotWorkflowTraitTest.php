@@ -131,7 +131,7 @@ class BotWorkflowTraitTest extends UnitTestCase {
     return array(
       'string'                       => array('This is a string'),
       'array of unexpected contents' => array(array(1, 2, 3)),
-      'non-iterateable object'       => array(new \stdClass()),
+      'non-iterable object'          => array(new \stdClass()),
     );
 
   }
