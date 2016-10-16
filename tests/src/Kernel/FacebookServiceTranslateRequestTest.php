@@ -108,7 +108,7 @@ class FacebookServiceTranslateRequestTest extends KernelTestBase {
    *
    * @dataProvider attachmentMessageDataProvider
    */
-  public function testServiceShouldAssignAttachentMessageType($json) {
+  public function testServiceShouldAssignAttachmentMessageType($json) {
     $original = $this->getTestTextMessage();
     $uid = $original['entry'][0]['messaging'][0]['sender']['id'];
     $translated = $this->service->translateRequest($json);
