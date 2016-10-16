@@ -42,7 +42,7 @@ class BotWorkflowTraitTest extends UnitTestCase {
       ],
     ]);
 
-    // Instantiate mock immuatableConfig for configFactory stub's get() method.
+    // Instantiate mock immutableConfig for configFactory stub's get() method.
     // @see Drupal\fb_messenger_bot\Workflow\FBMessengerBotWorkflow::buildSteps().
     $immutableConfig = $this->getMockBuilder('\Drupal\Core\Config\ImmutableConfig')
       ->disableOriginalConstructor()
