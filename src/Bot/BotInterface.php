@@ -10,7 +10,7 @@ namespace Drupal\fb_messenger_bot\Bot;
 interface BotInterface {
 
   /**
-   * Process incomming data.
+   * Process incoming data.
    *
    * @param string $data
    *   Json encoded data delivered by the Facebook API.

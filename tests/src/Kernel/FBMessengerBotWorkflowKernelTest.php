@@ -23,7 +23,7 @@ class FBMessengerBotWorkflowKernelTest extends KernelTestBase {
   public static $modules = array('fb_messenger_bot');
 
   /**
-   * A converstaion factory.
+   * A conversation factory.
    *
    * @var \Drupal\fb_messenger_bot\Conversation\ConversationFactory
    */

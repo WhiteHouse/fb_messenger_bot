@@ -102,7 +102,7 @@ class FacebookService {
   }
 
   /**
-   * Helper function to unpack an array of Messages into independant items.
+   * Helper function to unpack an array of Messages into independent items.
    *
    * @param array $messages
    *   An array of 1+ MessageInterface objects to send to the user.

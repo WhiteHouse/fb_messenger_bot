@@ -42,7 +42,7 @@ class BotWorkflowTraitTest extends UnitTestCase {
       ],
     ]);
 
-    // Instantiate mock immuatableConfig for configFactory stub's get() method.
+    // Instantiate mock immutableConfig for configFactory stub's get() method.
     // @see Drupal\fb_messenger_bot\Workflow\FBMessengerBotWorkflow::buildSteps().
     $immutableConfig = $this->getMockBuilder('\Drupal\Core\Config\ImmutableConfig')
       ->disableOriginalConstructor()
@@ -131,7 +131,7 @@ class BotWorkflowTraitTest extends UnitTestCase {
     return array(
       'string'                       => array('This is a string'),
       'array of unexpected contents' => array(array(1, 2, 3)),
-      'non-iterateable object'       => array(new \stdClass()),
+      'non-iterable object'          => array(new \stdClass()),
     );
 
   }
@@ -255,7 +255,7 @@ class BotWorkflowTraitTest extends UnitTestCase {
     // Make sure we have at least one trolling message.
     $this->assertTrue(count($trollingMessages) >= 1);
 
-    // Make sure all contents of the array are actually MessagInterfaces.
+    // Make sure all contents of the array are actually MessageInterfaces.
     foreach ($trollingMessages as $message) {
       $this->assertInstanceOf('\Drupal\fb_messenger_bot\Message\MessageInterface', $message);
     }
