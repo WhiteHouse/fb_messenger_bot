@@ -24,12 +24,12 @@ Platform.
 
 ## Customizing your bot
 
- *Note:* You can use the demo_fb_messenger_bot folder as a starting point or
+ *Note:* You can use the `demo_fb_messenger_bot` folder as a starting point or
  reference.
  1. In a custom module, create a custom workflow by creating a class that
     extends the FBMessengerBotWorkflow class.
- 2. Modify the fb_messenger_bot.workflow service to use your custom workflow by
-    creating a class that extends ServiceProviderBase and implements the alter()
+ 2. Modify the `fb_messenger_bot.workflow` service to use your custom workflow by
+    creating a class that extends ServiceProviderBase and implements the `alter()`
     method ([documentation from d.o.](https://www.drupal.org/node/2026959)).
 
 ### Supported message types
@@ -39,13 +39,13 @@ messages from [Facebook's Send API](https://developers.facebook.com/docs/messeng
 
 #### Text message
 
-```
+```php
 $textMessage =  new TextMessage('Text Message!');
 ```
 
 #### Button message
 
-```
+```php
 $buttonMessage = new ButtonMessage(
   array(
     new PostbackButton('Next Step', 'buttonMessage_Next'),
@@ -55,7 +55,7 @@ $buttonMessage = new ButtonMessage(
 ```
 
 #### Video message
-```
+```php
 $videoMessage = new VideoMessage('http://techslides.com/demos/sample-videos/small.mp4');
 ```
 
@@ -72,7 +72,7 @@ returns false.
 
 #### Instantiating a step in your workflow
 
-```
+```php
 $stepHumanReadableName
 $stepMachineName
 $messageToSend = array(new TextMessage('Hi there!'));
@@ -85,7 +85,7 @@ $welcomeStep = new BotWorkflowStep($humanReadableName, $stepMachineName, $messag
 As mentioned above, every step needs to indicate the next step to go to based on
 a user's response to that step. This is achieved with response handlers.
 
-```
+```php
 $welcomeStep->setResponseHandlers(
   array(
     '*' => array(
@@ -98,8 +98,8 @@ $welcomeStep->setResponseHandlers(
 
 In the example above, we indicate that regardless of what the user sends us (the
 asterisk), we want to proceed to the step in the workflow with machine name
-'builtABot'. By indicating 'NULL' for the handlerMessage, we are saying we want
-to send whatever message text is configured in the builtABot step. If we want to
+`builtABot`. By indicating `NULL` for the `handlerMessage`, we are saying we want
+to send whatever message text is configured in the `builtABot` step. If we want to
 override that behavior, we can simply set the handlerMessage value to be an
 array of messages(s) of type MessageInterface.
 
@@ -107,7 +107,7 @@ If you sent out a message with buttons, and want to route a user to different
 steps depending on which button they clicked, you would achieve that using
 response handlers:
 
-```
+```php
 $builtStep = new BotWorkflowStep('Built A Bot', 'builtABot',
   new ButtonMessage('Glad you stopped by for a chat. Have you ever built a chat bot?',
     array(
@@ -143,7 +143,7 @@ implement your own. These include:
 - e-mail
 - phone number (U.S.)
 
-```
+```php
 $validationFunction = $this->getTextMessageValidatorFunction();
 $invalidResponse = $this->getGenericValidationFailMessage();
 $welcomeStep->setValidationCallback($validationFunction);
