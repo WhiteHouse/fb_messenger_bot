@@ -200,7 +200,6 @@ class FacebookService {
     }
 
     foreach ($data['entry'] as $entry) {
-      // @todo: Should timestamp or page_id be attached to the messages array?
       foreach ($entry['messaging'] as $message) {
         $uid = $message['sender']['id'];
         $messageType = self::typeFromMessage($message);
@@ -214,8 +213,11 @@ class FacebookService {
 
         $messages[$uid] = isset($messages[$uid]) ? $messages[$uid] : [];
         $messages[$uid][] = [
-          'message_type' => $messageType,
-          'message_content' => $messageContent,
+          'message_sender'    => $message['sender'],
+          'message_recipient' => $message['recipient'],
+          'message_timestamp' => $message['timestamp'],
+          'message_type'      => $messageType,
+          'message_content'   => $messageContent,
         ];
       }
     }
